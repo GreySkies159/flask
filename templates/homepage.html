@@ -1,8 +1,11 @@
 {% extends "structure.html" %}
 
 {% block main %}
-<h1>THis is the homepage, index.html</h1>
-<a href="/login">Log in here</a>
-
+<div id=homepage>
+    <h1>Welcome to the page</h1>
 <p>{{ message }}</p>
+<a href="/signup">Sign in</a>
+<a href="/login">Log in</a>
+</div>
+
 {% endblock main %}

@@ -1,15 +1,15 @@
 import sqlite3
 from sqlite3.dbapi2 import Cursor
 
-connection = sqlite3.connect('flask_tut.db', check_same_thread=False)
+connection = sqlite3.connect('teacher_logins.db', check_same_thread=False)
 cursor = connection.cursor()
 #creating table
 cursor.execute(
-    """CREATE TABLE users(
+    """CREATE TABLE teachers(
         pk INTEGER PRIMARY KEY AUTOINCREMENT,
-        username VARCHAR(16),
+        teacherID VARCHAR(8),
         password VARCHAR(32),
-        favorite_color VARCHAR(32)
+        fullName VARCHAR(64)
     );"""
 )
 
