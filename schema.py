@@ -6,10 +6,10 @@ cursor = connection.cursor()
 #creating table
 cursor.execute(
     """CREATE TABLE teachers(
-        pk INTEGER PRIMARY KEY AUTOINCREMENT,
         teacherID VARCHAR(8),
         password VARCHAR(32),
-        fullName VARCHAR(64)
+        fullName VARCHAR(64),
+        PRIMARY KEY (teacherID)
     );"""
 )
 

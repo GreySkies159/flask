@@ -1,12 +1,20 @@
 {% extends "structure.html" %}
 
 {% block main %}
-<h1>This is for signing up here!</h1>
-  <form action="/signup" method ="post">
-    <input placeholder='Username' name="username" type="text">
-    <input placeholder='Password' name="password" type="password">
-    <input placeholder='Favorite Color' name="favorite_color" type="text">
+
+<div class="form">
+  <h1>Sign up</h1>
+  <p>{{ message }}</p>
+    <form action="/signup" method ="post">
+    <input type="text"placeholder='Teacher ID' name="ID" required> 
+    <br>
+    <input type="password" placeholder='Password' name="password" required>
+    <br>
+    <input type="text" placeholder='Full Name' name="full_name" required>
+    <br>
     <input type = "submit">
   </form>
-<p>{{ message }}</p>
+<a href="/login">Log in</a>
+</div>
+
 {% endblock main %}

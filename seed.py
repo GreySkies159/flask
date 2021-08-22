@@ -1,13 +1,13 @@
 import sqlite3
 
-connection = sqlite3.connect('flask_tut.db', check_same_thread = False)
+connection = sqlite3.connect('teacher_logins.db', check_same_thread = False)
 cursor = connection.cursor()
 
 cursor.execute(
-    """INSERT INTO users(
-        username,
+    """INSERT INTO teachers(
+        teacherID,
         password,
-        favorite_color
+        fullName
         )VALUES(
             'root',
             'root',
@@ -17,14 +17,14 @@ cursor.execute(
 )
 
 cursor.execute(
-    """INSERT INTO users(
-        username,
+    """INSERT INTO teachers(
+        teacherID,
         password,
-        favorite_color
+        fullName
         )VALUES(
-            'name',
-            'pass',
-            'color'
+            '00000001',
+            'password',
+            'Eglė Kasperavičiūtė'
         );"""
 
 )

@@ -1,3 +1,5 @@
+{% extends "structure.html" %}
+
 <!DOCTYPE html>
 <html lang="en", dir="ltr">
     <head>
@@ -8,8 +10,11 @@
         <script src="https://d3js.org/d3.v4.min.js"></script>
     </head>
     <body>
-        <p>You are logged in</p>
+        <div id="LoggedInHeadding">
+            <!-- find a way to get value from session and display it in html -->
+        <p>{{ message }}</p>   
         <a href="/logout">Logout</a>
+    </div>
         <h1>Exam test results</h1>
         <div id="svg">
         </div>
@@ -105,12 +110,21 @@
 
                             x = d3.mouse(this)[0]
                             y = d3.mouse(this)[1]
+                            //append score toolTip
+                            toolTip.attr("x", x)
+                                   .attr("y", y-40)
+                                   .style("background-color", "#FFFFFF")
+                                   .text("Score: "+d["test score"])
+                                   .style("font-size", "30px")
+                                   .attr("text-anchor", "middle")
+                            // append grade toolTip
                             toolTip.attr("x", x)
                                    .attr("y", y-20)
                                    .style("background-color", "#FFFFFF")
                                    .text("Grade: "+d["grade"])
-                                   .style("font-size", "30px")
+                                   .style("font-size", "20px")
                                    .attr("text-anchor", "middle")
+
                                    
                         })
 

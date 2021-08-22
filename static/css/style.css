@@ -1,9 +1,70 @@
+/* palette:
+#f0ebc1
+#e8c481
+#d48c3a
+#664937
+#333333
+
+ */
+
 html, body{
     /* background-image: url(../img/background.jpg); */
-    background-color:#fff5f5;
+    background-color:#f0ebc1;
   }
-  
-   p{
-    color: #071330;
+  h1 {
+    color: #333333;
+   }
+  p{
+    color: #664937;
   }
-  
+
+  #homepage {
+    
+    padding-top: 20px;
+    text-align: center;
+  }
+  a {
+    font-size: 20px;
+    font-style: italic;
+    color: #d48c3a;
+
+  }
+  .links{
+    font-size: 25px;
+  }
+  #homepage>.links>a{
+    display: inline-block;
+    width: fit-content;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+  }
+
+.form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.form input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: #e8c481;
+  border-color:#d48c3a;
+}
+.form input[type="text"], input[type="password"]{
+ width: 25%
+}
+.form a {
+  width: fit-content;
+  height: fit-content;
+  display: inline-block;
+ text-align: center;
+ align-self: center;
+ margin-top: 20px;
+
+}
+::placeholder{
+  color: #333333;
+}
