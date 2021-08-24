@@ -17,7 +17,6 @@ def before_request():
 # homepage
 @app.route('/', methods=['GET'])
 def home():
-    print('session ID       ', session['ID'], "Current ID  ", ID)
     if 'ID' in session:
         g.user=session['ID']
         fullname=model.full_name(str(g.user))
@@ -25,6 +24,12 @@ def home():
         return render_template('examResults.html', message=message)
     return render_template('homepage.html', message='Login to page or sign up')
     
+
+@app.route('/results', methods=['GET'])
+def graph():
+    return render_template('examResults.html')
+
+
 @app.route('/login', methods=['GET', 'POST'])    
 def login():
      if request.method=='POST':
