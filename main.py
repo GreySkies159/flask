@@ -3,10 +3,11 @@ import model
 
 app = Flask(__name__)
 app.secret_key = "n$653odjenSFol3mCkrjw5"
-
+#inicial ID
 ID = '00000000'
+#all Database users
 user =model.check_users()
-
+# getting id from session
 @app.before_request
 def before_request():
     g.ID = None
@@ -25,9 +26,9 @@ def home():
     return render_template('homepage.html', message='Login to page or sign up')
     
 
-@app.route('/results', methods=['GET'])
-def graph():
-    return render_template('examResults.html')
+# @app.route('/results', methods=['GET'])
+# def graph():
+#     return render_template('examResults.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])    
@@ -79,5 +80,6 @@ def logout():
     session.pop('ID', None)
     return redirect(url_for('home'))
 
+# running app on port 7000
 if __name__ =='__main__':
     app.run(port=7000, debug=True)

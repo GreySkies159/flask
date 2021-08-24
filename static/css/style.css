@@ -68,3 +68,7 @@ html, body{
 ::placeholder{
   color: #333333;
 }
+.results{
+  text-align: center;
+  
+}
